@@ -15,10 +15,10 @@ export default {
   data() {
     return {
       geoJson: null,
-      mapAdCode: 100000, // 默认的中国adcode码
+      mapAdCode: 220000, // 默认的中国adcode码
       projectionFnParam: {
-        center: [104.0, 37.5],
-        scale: 40,
+        center: [126.0, 42.5],
+        scale: 140,
       },
       mapScale: {
         province: 100,
