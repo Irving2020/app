@@ -29,18 +29,14 @@ export default {
   },
   methods: {
     queryMapData(code) {
-        axios.get(`https://geo.datav.aliyun.com/areas_v3/bound/${code}_full.json`)
+      axios.get(`https://geo.datav.aliyun.com/areas_v3/bound/${code}_full.json`)
         .then(response => {
           this.geoJson = response.data;
-        })
-        .catch(error => {
-          console.error(error)
-        })
+        });
     },
     dblClickFn(customProperties) {
+      debugger
       this.mapAdCode = customProperties.adcode;
-      console.log('mapAdCode',this.mapAdCode)
-      this.queryMapData(this.mapAdCode)
       this.projectionFnParam = {
         center: customProperties.centroid,
         scale: this.mapScale[customProperties.level],

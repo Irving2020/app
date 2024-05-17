@@ -29,13 +29,14 @@ export default {
   },
   methods: {
     queryMapData(code) {
+      try {
         axios.get(`https://geo.datav.aliyun.com/areas_v3/bound/${code}_full.json`)
         .then(response => {
           this.geoJson = response.data;
-        })
-        .catch(error => {
-          console.error(error)
-        })
+        });
+      } catch (error) {
+        console.error(error);
+      }
     },
     dblClickFn(customProperties) {
       this.mapAdCode = customProperties.adcode;
